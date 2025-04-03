@@ -23,10 +23,10 @@ jobs:
           node-version: "20.16.0"
 
       - name: Install dependencies
-        run: yarn install
+        run: npx install
 
       - name: Build Expo Web
-        run: yarn expo build:web
+        run: npx expo build:web
 
       - name: Deploy with gh-pages
         run: |
