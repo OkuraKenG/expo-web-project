@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "predeploy": "npm run build",
+    "predeploy": "npx expo export --platform web",
     "deploy": "gh-pages -d dist"
   },
   "jest": {
