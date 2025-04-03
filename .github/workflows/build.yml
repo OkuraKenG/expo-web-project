@@ -21,15 +21,18 @@ jobs:
     - name: Install dependencies
       run: |
         npm install
-        # Install node-fetch@2 and undici to polyfill ReadableStream
-        npm install node-fetch@2 undici
+        # Install node-fetch@2, undici, and stream-browserify to polyfill ReadableStream
+        npm install node-fetch@2 undici stream-browserify
+
+    - name: Add polyfill to Node.js environment
+      run: |
+        # Polyfill ReadableStream using stream-browserify
+        echo "global.ReadableStream = require('stream-browserify').Readable;" > setup.js
+        node setup.js
 
     - name: Build the project
       run: |
-        # Add polyfill to Node.js environment
-        echo "require('node-fetch'); require('undici');" > setup.js
-        node setup.js
-        # Run expo export to build the static web files into the dist folder
+        # Now run expo export to build the static web files into the dist folder
         npx expo export --platform web
 
     - name: Deploy to GitHub Pages
