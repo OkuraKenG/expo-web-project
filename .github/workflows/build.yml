@@ -6,8 +6,11 @@ on:
       - main  # Trigger the workflow on push to the main branch (or change to your default branch)
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
 
     steps:
     - name: Checkout code
@@ -33,7 +36,6 @@ jobs:
 
     - name: Build the project
       run: |
-        # Now run expo export to build the static web files into the dist folder
         npx expo export --platform web
 
     - name: Deploy to GitHub Pages
