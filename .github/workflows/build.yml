@@ -23,7 +23,7 @@ jobs:
           node-version: "20.16.0"
 
       - name: Install dependencies
-        run: npx install
+        run: npm install
 
       - name: Build Expo Web
         run: npx expo build:web
