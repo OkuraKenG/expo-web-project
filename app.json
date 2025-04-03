@@ -36,6 +36,8 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "homepage": "https://okaykenji.github.io/expo-web-project"
+
   }
 }
