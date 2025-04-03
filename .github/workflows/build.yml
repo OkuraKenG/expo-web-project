@@ -23,7 +23,7 @@ jobs:
 
     - name: Build the project
       run: |
-        npm run build  # Or `npx expo export --platform web` if you are directly using Expo
+        npx expo export --platform web
 
     - name: Deploy to GitHub Pages
       run: |
