@@ -33,11 +33,7 @@ jobs:
         # Polyfill ReadableStream using stream-browserify
         echo "global.ReadableStream = require('stream-browserify').Readable;" > setup.js
         node setup.js
-
-    - name: Build the project
-      run: |
-        npx expo export --platform web
-
+        
     - name: Deploy to GitHub Pages
       run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
