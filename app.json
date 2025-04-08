@@ -35,11 +35,13 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/expo-web-project"
     },
     "homepage": "https://okaykenji.github.io/expo-web-project",
     "assetBundlePatterns": [
       "**/*"
     ]
+    
   }
 }

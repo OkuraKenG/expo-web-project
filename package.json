@@ -10,8 +10,9 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "predeploy": "npx expo export --platform web",
-    "deploy": "gh-pages -d dist"
+    "react-native-web": "~0.19.13",
+    "deploy": "gh-pages --nojekyll -d dist",
+    "predeploy": "expo export -p web"
   },
   "jest": {
     "preset": "jest-expo"
